@@ -8,8 +8,8 @@ def canUnlockAll(boxes):
         c = i + 1
         if c in boxes[i]:
             pass
-            print('c es {}'.format(c))
+            # print('c es {}'.format(c))
         else:
-            print('c es {}'.format(c))
+            # print('c es {}'.format(c))
             return False
     return True
