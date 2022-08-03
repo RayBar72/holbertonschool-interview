@@ -4,12 +4,16 @@
 
 def canUnlockAll(boxes):
     '''Returns True if all boxes can be unlocked'''
-    for i in range(len(boxes) - 1):
-        c = i + 1
-        if c in boxes[i]:
-            pass
-            # print('c es {}'.format(c))
-        else:
-            # print('c es {}'.format(c))
+    if type(boxes) is not list:
+        return False
+    if len(boxes) == 0:
+        return False
+    for i in range(1, len(boxes) - 1):
+        c = False
+        for j in range(len(boxes)):
+            c = i in boxes[j] and i != j
+            if c:
+                break
+        if c is False:
             return False
     return True
