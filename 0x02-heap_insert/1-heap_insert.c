@@ -14,7 +14,8 @@ static int node_number(heap_t *root)
 }
 
 /**
- * node_height - Function that, based in node number, calculates the height of a tree
+ * node_height - Function that, based in node number,
+ * calculates the height of a tree
  * @n: number of nodes
  * Return: height of the tree
  */
