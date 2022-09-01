@@ -1,8 +1,15 @@
 #include "sandpiles.h"
 
+/**
+ * void sum_piles - function that agregates cell by cell two grids
+ * 
+ * @grid1: grid one
+ * @grid2: grid two
+ */
 static void sum_piles(int grid1[3][3], int grid2[3][3])
 {
 	int i, j;
+
 	for (i = 0; i < 3; i++)
 	{
 		for (j = 0; j < 3; j++)
@@ -13,9 +20,16 @@ static void sum_piles(int grid1[3][3], int grid2[3][3])
 	}
 }
 
+/**
+ * grid_stable - function that determines if a grid is stable
+ * 
+ * @grid1:
+ * Return: True if unstable, other wise, false
+ */
 static bool grid_stable(int grid1[3][3])
 {
 	int i, j;
+
 	for (i = 0; i < 3; i++)
 	{
 		for (j = 0; j < 3; j++)
@@ -27,6 +41,12 @@ static bool grid_stable(int grid1[3][3])
 	return (false);
 }
 
+/**
+ * disperse - function that disperse a grid if cell value above 3
+ * 
+ * @grid1: grid one
+ * @grid2: grid two
+ */
 static void disperse(int grid1[3][3], int grid2[3][3])
 {
 	int i, j;
@@ -52,6 +72,11 @@ static void disperse(int grid1[3][3], int grid2[3][3])
 	sum_piles(grid1, grid2);
 }
 
+/**
+ * printing_grid - prints a grid
+ * 
+ * @grid: grid to be printed
+ */
 void printing_grid(int grid[3][3])
 {
 	int i, j;
@@ -68,7 +93,12 @@ void printing_grid(int grid[3][3])
 	}
 }
 
-
+/**
+ * sandpiles_sum - function that sums two sand piles
+ * 
+ * @grid1: grid one
+ * @grid2: grid two
+ */
 void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 {
 	sum_piles(grid1, grid2);
