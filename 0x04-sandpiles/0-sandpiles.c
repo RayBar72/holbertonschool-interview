@@ -21,7 +21,7 @@ static void sum_piles(int grid1[3][3], int grid2[3][3])
 
 /**
  * grid_stable - function that determines if a grid is stable
- * @grid1:
+ * @grid1: grid one
  * Return: True if unstable, other wise, false
  */
 static bool grid_stable(int grid1[3][3])
