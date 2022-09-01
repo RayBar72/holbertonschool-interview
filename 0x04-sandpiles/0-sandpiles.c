@@ -1,7 +1,7 @@
 #include "sandpiles.h"
 
 /**
- * void sum_piles - function that agregates cell by cell two grids
+ * sum_piles - function that agregates cell by cell two grids
  * @grid1: grid one
  * @grid2: grid two
  */
