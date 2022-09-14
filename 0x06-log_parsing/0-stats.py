@@ -10,18 +10,36 @@ def printres(total, st_code):
     Prints the results of the computed metrics
     '''
     print('File size: {}'.format(total))
+    print('Value of i: {}'.format(i))
     orden = sorted(st_code)
     for o in orden:
         print('{}: {}'.format(o, st_code[o]))
 
+
+# def checkerline(lines, line):
+#     '''
+#     Function that checks the input format of the line
+#     '''
+#     if not isinstance(lines, str):
+#         return False
+#     if len(line) != 9:
+#         return False
+#     if not '.' in line[0]:
+#         return False
+#     if line[1] is not '-':
+#         return False
+#     if 
 
 total = 0
 i = 0
 st_code = {}
 try:
     for lines in sys.stdin:
-        i += 1
         line = lines.split()
+        print(len(line))
+        for l in line:
+            print(type(l))
+        i += 1
         posible = [200, 301, 400, 401, 403, 404, 405, 500]
         try:
             t0 = int(line[-1])
