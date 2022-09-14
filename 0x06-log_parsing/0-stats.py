@@ -1,4 +1,4 @@
-#!/usr/bin/pyton3
+#!/usr/bin/python3
 '''
 Modulus that reads stdin line by line an computes metrics
 '''
