@@ -1,46 +1,40 @@
 #!/usr/bin/python3
 '''
-Modulus that reads stdin line by line an computes metrics
+Modulus that reads stdin lines by lines an computes metrics
 '''
 import sys
 
 
-if __name__ == '__main__':
-    total = 0
-    i = 0
-    st_code = {}
+if __name__ == "__main__":
+    total = [0]
+    st_code = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
 
-    def printres(total, st_code):
-        '''
-        Prints the results of the computed metrics
-        '''
-        print('File size: {}'.format(total))
-        orden = sorted(st_code)
-        for o in orden:
-            print('{}: {}'.format(o, st_code[o]))
+    def check_match(lines):
+        '''Checks for regexp match in lines.'''
+        try:
+            lines = lines[:-1]
+            line = lines.split(" ")
+            total[0] += int(line[-1])
+            code = int(line[-2])
+            if code in st_code:
+                st_code[code] += 1
+        except Exception:
+            pass
 
+    def print_stats():
+        '''Prints accumulated statistics.'''
+        print("File total: {}".format(total[0]))
+        for k in sorted(st_code.keys()):
+            if st_code[k]:
+                print("{}: {}".format(k, st_code[k]))
+    i = 1
     try:
         for lines in sys.stdin:
-            line = lines.split()
-            i += 1
-            posible = [200, 301, 400, 401, 403, 404, 405, 500]
-            try:
-                t0 = int(line[-1])
-            except Exception:
-                t0 = 0
-            total += t0
-            try:
-                t1 = int(line[-2])
-                if t1 in posible:
-                    if t1 not in st_code:
-                        st_code[t1] = 1
-                    else:
-                        st_code[t1] += 1
-            except Exception:
-                pass
+            check_match(lines)
             if i % 10 == 0:
-                printres(total, st_code)
+                print_stats()
+            i += 1
     except KeyboardInterrupt:
-        printres(total, st_code)
+        print_stats()
         raise
-    print(total, st_code)
+    print_stats()
