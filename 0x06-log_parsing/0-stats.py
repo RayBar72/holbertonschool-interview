@@ -10,7 +10,7 @@ if __name__ == "__main__":
     st_code = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
 
     def check_match(lines):
-        '''Checks for regexp match in lines.'''
+        '''Checks match in lines.'''
         try:
             lines = lines[:-1]
             line = lines.split(" ")
@@ -22,7 +22,7 @@ if __name__ == "__main__":
             pass
 
     def print_stats():
-        '''Prints accumulated statistics.'''
+        '''Prints statistics.'''
         print("File total: {}".format(total[0]))
         for k in sorted(st_code.keys()):
             if st_code[k]:
