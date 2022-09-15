@@ -23,7 +23,7 @@ if __name__ == "__main__":
 
     def print_stats():
         '''Prints statistics.'''
-        print("File total: {}".format(total[0]))
+        print("File size: {}".format(total[0]))
         for k in sorted(st_code.keys()):
             if st_code[k]:
                 print("{}: {}".format(k, st_code[k]))
