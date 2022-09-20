@@ -3,7 +3,7 @@
 /**
  * check_cycle - Function that check if a sll has a cycle
  * @list: pointer to sll
- * Retur - 1 if is a cycle, 0 other wise
+ * Return - 1 if is a cycle, 0 other wise
  */
 
 int check_cycle(listint_t *list)
