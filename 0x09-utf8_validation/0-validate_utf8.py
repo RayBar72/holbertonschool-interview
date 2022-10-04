@@ -23,21 +23,34 @@ def validUTF8(data):
 
     for i in range(len(data)):
         if data[i][:5] == '11110':
-            if not (data[i + 1] and data[i + 2] and data[i + 3]):
+            try:
+                if not (data[i + 1] or data[i + 2] or data[i + 3]):
+                    return False
+                if data[i + 1] != data[i + 2] != data[i + 3] != '10':
+                    return False
+            except Exception:
                 return False
-            if data[i + 1] != data[i + 2] != data[i + 3] != '10':
-                return False
+
         elif data[i][:4] == '1110':
-            if not (data[i + 1] and data[i + 2]):
+            try:
+                if not (data[i + 1] or data[i + 2]):
+                    return False
+                if data[i + 1] != data[i + 2] != '10':
+                    return False
+            except Exception:
                 return False
-            if data[i + 1] != data[i + 2] != '10':
-                return False
+
         elif data[i][:3] == '110':
-            if not (data[i + 1]):
+            try:
+                if not (data[i + 1]):
+                    return False
+                if data[i + 1] != '10':
+                    return False
+            except Exception:
                 return False
-            if data[i + 1] != '10':
-                return False
+
         elif data[i][0] == '1':
             return False
-        else:
-            return True
+
+
+    return True
