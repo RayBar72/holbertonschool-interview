@@ -16,7 +16,7 @@ def validUTF8(data):
             return False
         if i < 0:
             return False
-        if i > 255:
+        if i > 256:
             return False
 
     data = [str(bin(x)).split('b')[1] for x in data]
