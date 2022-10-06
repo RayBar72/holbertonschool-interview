@@ -11,12 +11,18 @@ def validUTF8(data):
     '''
     if type(data) is not list:
         return False
+    if data == []:
+        return False
     for i in data:
         if type(i) is not int:
             return False
         if i < 0:
             return False
         if i > 256:
+            return False
+        if i == None:
+            return False
+        if i == False:
             return False
 
     data = [str(bin(x)).split('b')[1] for x in data]
