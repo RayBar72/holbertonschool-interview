@@ -58,5 +58,4 @@ def validUTF8(data):
         elif data[i][0] == '1':
             return False
 
-
     return True
