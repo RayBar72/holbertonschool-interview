@@ -16,7 +16,7 @@ def validUTF8(data):
             return False
         if i < 0:
             return False
-        if i > 256:
+        if i > 247:
             return False
         if i is None:
             return False
