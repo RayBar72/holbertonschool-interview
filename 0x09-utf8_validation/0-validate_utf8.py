@@ -14,12 +14,18 @@ def validUTF8(data):
     for i in data:
         if type(i) is not int:
             return False
+        if i < 0:
+            return False
+        if i > 255:
+            return False
 
     data = [str(bin(x)).split('b')[1] for x in data]
 
     for i in range(len(data)):
         if len(data[i]) < 8:
             data[i] = ('0' * (8 - len(data[i]))) + data[i]
+        elif len(data[i]) > 8:
+            return False
 
     for i in range(len(data)):
         if data[i][:5] == '11110':
