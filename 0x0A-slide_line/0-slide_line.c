@@ -15,7 +15,7 @@ size_t i = 0;
 	{
 		while (i < size - 1)
 		{
-			if (line[i] == 0 && line[i + 1] !=0)
+			if (line[i] == 0 && line[i + 1] != 0)
 			{
 				line[i] = line[i + 1];
 				line[i + 1] = 0;
@@ -68,7 +68,7 @@ int a = 0;
 		i = size - 1;
 		while (i)
 		{
-			if (line[i] ==line[i - 1])
+			if (line[i] == line[i - 1])
 			{
 				a = line[i];
 				line[i] = line[i - 1] + a;
@@ -84,6 +84,7 @@ int a = 0;
  * @line: array to be orderer
  * @size: size of array line
  * @direction: left or right side to be changed numbers
+ * Return: 1 if success, 0 other case
  */
 
 int slide_line(int *line, size_t size, int direction)
