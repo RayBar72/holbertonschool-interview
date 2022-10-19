@@ -10,7 +10,7 @@ static void menger_1(int level)
 	int i = 0, j = 0, _i = 0, _j = 0, c;
 
 	for (i = 0; i < level; i++)
-	{	
+	{
 		for (j = 0; j < level; j++)
 		{
 			_i = i;
@@ -18,7 +18,7 @@ static void menger_1(int level)
 			c = '#';
 			while (_i || _j)
 			{
-				if (_i % 3 == 1 && _j %3 == 1)
+				if (_i % 3 == 1 && _j % 3 == 1)
 				{
 					c = ' ';
 				}
