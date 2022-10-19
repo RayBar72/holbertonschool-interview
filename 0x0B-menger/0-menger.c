@@ -1,6 +1,11 @@
 #include "menger.h"
 
-void menger_1(int level)
+/**
+ * menger_1 - Function that prints menger
+ * @level: int with the number of levels
+ */
+
+static void menger_1(int level)
 {
 	int i = 0, j = 0, _i = 0, _j = 0, c;
 
@@ -25,6 +30,11 @@ void menger_1(int level)
 		putchar('\n');
 	}
 }
+
+/**
+ * menger - Function that prints menger
+ * @level: int with the number of levels
+ */
 
 void menger(int level)
 {
