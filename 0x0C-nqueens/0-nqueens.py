@@ -101,9 +101,9 @@ if __name__ == '__main__':
     '''Main function that calculates queens challange'''
     import sys
 
-    if len(sys.argv) != 2:
-        print("Usage: nqueens N")
-        sys.exit(1)
+    # if len(sys.argv) != 2:
+    #     print("Usage: nqueens N")
+    #     sys.exit(1)
 
     n = sys.argv[1]
 
