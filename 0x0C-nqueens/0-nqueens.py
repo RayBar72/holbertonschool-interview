@@ -121,5 +121,8 @@ if __name__ == '__main__':
         x = coordenadas(n, i)
         if x is not None and x != []:
             lista = []
-            for i in range(n):
-                
+            for j, p in enumerate(x):
+                lista.append(p)
+                if (j + 1) % n == 0:
+                    print('{}'.format(lista))
+                    lista.clear()
