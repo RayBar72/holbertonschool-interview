@@ -120,4 +120,5 @@ if __name__ == '__main__':
     for i in range(n):
         x = coordenadas(n, i)
         if x is not None and x != []:
-            print('{}'.format(x))
+            print('{}'.format(x), end='')
+            print()
