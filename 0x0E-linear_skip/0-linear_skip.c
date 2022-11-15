@@ -1,5 +1,12 @@
 #include "search.h"
 
+/**
+ * linear_skip - function that searches for a value in a sorted skip
+ * list of integers.
+ * @list: pointer to head of linked list
+ * @value: value to be searched
+ * Return: a pointer to the searched value or NULL
+ */
 
 skiplist_t *linear_skip(skiplist_t *list, int value)
 {
