@@ -1,0 +1,60 @@
+------------------
+Testing Rain
+------------------
+
+
+Importing the function
+    >>> rain = __import__('0-rain').rain
+
+    >>> walls = [0, 1, 0, 2, 0, 3, 0, 4]
+    >>> print(rain(walls))
+    6
+
+    >>> walls = [0, 0, 0, 0, 0, 0, 0, 0]
+    >>> print(rain(walls))
+    0
+
+    >>> walls = [0, 0, 0, 1, 0, 0, 0, 0]
+    >>> print(rain(walls))
+    0
+
+    >>> walls = [0, 0, 0, 1, 0, 14, 0, 0]
+    >>> print(rain(walls))
+    1
+
+    >>> walls = [None, None]
+    >>> print(rain(walls))
+    0
+
+    >>> walls = [False, False]
+    >>> print(rain(walls))
+    0
+
+    >>> walls = [1]
+    >>> print(rain(walls))
+    0
+
+    >>> walls = None
+    >>> print(rain(walls))
+    0
+
+    >>> walls = [.6, 11]
+    >>> print(rain(walls))
+    0
+
+    >>> walls = [None, None]
+    >>> print(rain(walls))
+    0
+
+    >>> walls = [1, 2]
+    >>> print(rain(walls))
+    0
+
+    >>> walls = [1, 0, 0]
+    >>> print(rain(walls))
+    0
+
+    >>> walls = [2, 0, 2]
+    >>> print(rain(walls))
+    2
+
