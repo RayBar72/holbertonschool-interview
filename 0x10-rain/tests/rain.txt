@@ -58,3 +58,6 @@ Importing the function
     >>> print(rain(walls))
     2
 
+    >>> walls = [0, 2, 0, 2, 0]
+    >>> print(rain(walls))
+    2
