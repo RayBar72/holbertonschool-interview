@@ -20,7 +20,7 @@ def rain(walls):
             return 0
 
         for w in walls:
-            if type(w) is not int:
+            if not isinstance(w, (int, float)):
                 return 0
             if w < 0:
                 return 0
