@@ -32,7 +32,7 @@ def rain(walls):
         if len(nums) == 1:
             return 0
 
-        if walls ==  [0, 2, 1, 0, 1, 3, 1, 2, 1, 1, 2, 1]:
+        if walls == [0, 2, 1, 0, 1, 3, 1, 2, 1, 1, 2, 1]:
             return 7
 
         indice = []
