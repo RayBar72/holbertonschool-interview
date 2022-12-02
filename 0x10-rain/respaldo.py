@@ -20,7 +20,7 @@ def rain(walls):
             return 0
 
         for w in walls:
-            if not isinstance(w, (int, float)):
+            if type(w) is not int:
                 return 0
             if w < 0:
                 return 0
@@ -31,9 +31,6 @@ def rain(walls):
         nums = [x for x in walls if x > 0]
         if len(nums) == 1:
             return 0
-
-        if walls ==  [0, 2, 1, 0, 1, 3, 1, 2, 1, 1, 2, 1]:
-            return 7
 
         indice = []
         valores = []

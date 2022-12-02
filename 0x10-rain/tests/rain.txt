@@ -61,3 +61,67 @@ Importing the function
     >>> walls = [0, 2, 0, 2, 0]
     >>> print(rain(walls))
     2
+
+    >>> walls = [0, 1, 1, 1, 0]
+    >>> print(rain(walls))
+    0
+
+    >>> walls = [False, False]
+    >>> print(rain(walls))
+    0
+
+    >>> walls = [None, None, 1, 0, 1]
+    >>> print(rain(walls))
+    0
+
+    >>> walls = None
+    >>> print(rain(walls))
+    0
+
+    >>> walls = []
+    >>> print(rain(walls))
+    0
+
+    >>> walls = [0, 8, 0, 1, 0]
+    >>> print(rain(walls))
+    1
+
+    >>> walls = [0, 1, 0, 1, 0, 0, 0, 1]
+    >>> print(rain(walls))
+    4
+
+    >>> walls = [0, 2, 0, 2, 0, 0, 0, 1]
+    >>> print(rain(walls))
+    5
+
+    >>> walls = [2, 0, 0, 2, 0, 0, 0, 1]
+    >>> print(rain(walls))
+    7
+
+    >>> walls = [0, 1.0, 0, 1, 0, 0, 0, 1]
+    >>> print(rain(walls))
+    0
+
+    >>> walls = [1, 1, 1, 1, 1, 1, 1, 1]
+    >>> print(rain(walls))
+    0
+
+    >>> walls = [1]
+    >>> print(rain(walls))
+    0
+
+    >>> walls = [0]
+    >>> print(rain(walls))
+    0
+
+    >>> walls = [0, 1, 0, 2, 0, 0, 0, 2]
+    >>> print(rain(walls))
+    7
+
+    >>> walls = [4, 0, 1, 0]
+    >>> print(rain(walls))
+    1
+
+    >>> walls = [0, 1, 0, 1, 0, 0, 0, False]
+    >>> print(rain(walls))
+    0
