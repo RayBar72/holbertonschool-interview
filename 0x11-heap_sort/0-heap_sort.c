@@ -1,5 +1,10 @@
 #include "sort.h"
 
+/**
+ * swap - swaps two ints
+ * @a: pointer to int
+ * @b: pointer to int
+ */
 void swap(int *a, int *b)
 {
 	int temp = *a;
@@ -7,7 +12,13 @@ void swap(int *a, int *b)
 	*b = temp;
 }
 
-
+/**
+ * heapify - takes an array and makes it max heap
+ * @arr: pointer to array
+ * @n: int
+ * @i: int
+ * @total_size: int
+ */
 void heapify(int *arr, int n, int i, size_t total_size)
 {
 	int largest = i;
@@ -28,6 +39,11 @@ void heapify(int *arr, int n, int i, size_t total_size)
 	}
 }
 
+/**
+ * heap_sort - sorts an int array by heapify
+ * @array: pointer to the arra
+ * @size: size of the array
+ */
 void heap_sort(int *array, size_t size)
 {
 	size_t i;
