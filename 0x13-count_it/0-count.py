@@ -37,8 +37,8 @@ def impreso(inicial, reddit):
         reddit (list): to search
     """
     for k in inicial.keys():
-        if k in reddit:
-            inicial[k] = reddit[k]
+        if k.lower() in reddit:
+            inicial[k] = reddit[k.lower()]
     d = sorted(inicial.items(), key=operator.itemgetter(1), reverse=True)
     for nom in d:
         a, b = nom
@@ -56,9 +56,9 @@ def listados(lista):
     Returns:
         dict: dictionary in zero with the words to be searched
     """
-    res = [x.lower() for x in lista]
-    res = set(res)
-    res = sorted(list(res))
+    # res = [x.lower() for x in lista]
+    # res = set(res)
+    res = sorted(list(lista))
     dito = {k: 0 for k in res}
     return dito
 
