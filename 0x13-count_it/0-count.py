@@ -1,39 +1,12 @@
 #!/usr/bin/python3
 """Modulus that contains function for counting hotlist in Reddit
 Functions:
-    hot_management: takes a list an counts the number of times that
-                    a word happens
-    impreso: prints the results
-    listados: converts into a dictionary the list of words to be searched
-    recurse: searches the hotlis topics. Recursive function
     count_words: function that orders the different steps of the process
 """
 import requests
 
 
-def impreso(inicial, reddit):
-    """Function that prints the occurrence of searched words
-
-    Args:
-        inicial (list): to be searched
-        reddit (list): to search
-    """
-    count = {}
-    for word in inicial:
-        count[word] = 0
-    for title in reddit:
-        for word in inicial:
-            for title_word in title.lower().split():
-                if title_word == word.lower():
-                    count[word] += 1
-    count = {k: v for k, v in count.items() if v > 0}
-    words = list(count.keys())
-    for word in sorted(words,
-                       reverse=True, key=lambda k: count[k]):
-        print("{}: {}".format(word, count[word]))
-
-
-def count_words(subreddit, word_list, hot_list=[], after=None):
+def count_words(subreddit, word_list, hot_list=[], after='null'):
     """Function that orders the different steps of the process
 
     Args:
@@ -44,22 +17,34 @@ def count_words(subreddit, word_list, hot_list=[], after=None):
     Returns:
         list: with all titles of the topic
     """
-    red_url = 'http://reddit.com/r/{}/hot.json'
-    headers = {'User-agent': 'Unix:elrayi:v1'}
-    limit = {'limit': 100}
-    if isinstance(after, str):
-        if after != "STOP":
-            limit['after'] = after
-        else:
-            return impreso(word_list, hot_list)
-    response = requests.get(red_url.format(subreddit),
-                            headers=headers, params=limit)
+    url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
+    credentials = {'User-Agent': "Mozilla/5.0 (X11; CrOS x86_64 10066.0.0)\
+                   AppleWebKit/537.36 (KHTML, like Gecko)\
+                   Chrome/84.0.4147.105 Safari/537.36"}
+    parameters = {"limit": "100", "after": after}
+    response = requests.get(url,
+                            headers=credentials,
+                            params=parameters,
+                            allow_redirects=False)
     if response.status_code != 200:
         return None
-    data = response.json().get('data', {})
-    after = data.get('after', 'STOP')
-    if not after:
-        after = "STOP"
-    hot_list = hot_list + [post.get('data', {}).get('title')
-                           for post in data.get('children', [])]
-    return count_words(subreddit, word_list, hot_list, after)
+    hot_list_of_dicts = response.json().get("data").get("children")
+    after = response.json().get("data").get("after")
+    hot_list.extend([reddit.get("data").get("title") for
+                    reddit in hot_list_of_dicts])
+    if after is None:
+        to_print_dict = {x: 0 for x in word_list}
+        for word in word_list:
+            count = 0
+            for title in hot_list:
+                split_title = title.split()
+                new_split = [element.lower() for element in split_title]
+                count = count + new_split.count(word.lower())
+            if count != 0:
+                to_print_dict[word] = to_print_dict[word] + count
+        for elem in sorted(to_print_dict.items(), key=lambda x: (-x[1], x[0])):
+            if elem[1] != 0:
+                print("{}: {}".format(elem[0], elem[1]))
+    else:
+        return count_words(subreddit, word_list,
+                           hot_list, after)
