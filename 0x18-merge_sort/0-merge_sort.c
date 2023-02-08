@@ -1,6 +1,12 @@
 #include "sort.h"
 
-
+/**
+ * merge - Function thaat merges two arrays into original
+ * @array: Pointer to priamary array
+ * @izq: pointer to left array
+ * @der: pointer to right array
+ * @size: size of the priamary array
+*/
 void merge(int *array, int *izq, int *der, size_t size)
 {
 	int s_i, s_d;
@@ -31,6 +37,12 @@ void merge(int *array, int *izq, int *der, size_t size)
 	print_array(array, size);
 }
 
+/**
+ * merge_sort - Function that sort an array in ascending order
+ * with merge sort algorithm
+ * @array: pointer to array
+ * @size: size of the array
+*/
 void merge_sort(int *array, size_t size)
 {
 	int der[512];
