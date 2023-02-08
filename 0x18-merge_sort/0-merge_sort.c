@@ -49,7 +49,7 @@ void merge_sort(int *array, size_t size)
 	int izq[512];
 	size_t med = 0, i = 0;
 
-	if(!array)
+	if (!array)
 		return;
 
 	if (size < 2)
