@@ -1,56 +1,28 @@
-0x03. Minimum Operations
- By: Carrie Ybay, Software Engineer at Holberton School
- Weight: 1
- Project will start Aug 22, 2022 12:00 AM, must end by Aug 26, 2022 12:00 AM
- was released at Aug 24, 2022 12:00 AM
- An auto review will be launched at the deadline
-Requirements
-General
-Allowed editors: vi, vim, emacs
-All your files will be interpreted/compiled on Ubuntu 14.04 LTS using python3 (version 3.4.3)
-All your files should end with a new line
-The first line of all your files should be exactly #!/usr/bin/python3
-A README.md file, at the root of the folder of the project, is mandatory
-Your code should be documented
-Your code should use the PEP 8 style (version 1.7.x)
-All your files must be executable
-Tasks
-0. Minimum Operations
-mandatory
-In a text file, there is a single character H. Your text editor can execute only two operations in this file: Copy All and Paste. Given a number n, write a method that calculates the fewest number of operations needed to result in exactly n H characters in the file.
+# 0x03. Minimum Operations #
 
-Prototype: def minOperations(n)
-Returns an integer
-If n is impossible to achieve, return 0
-Example:
+<img src="https://github.com/RayBar72/holbertonschool-interview/blob/master/image.jfif" width="1000" height="450">
 
-n = 9
+## Requirements ##
 
-H => Copy All => Paste => HH => Paste =>HHH => Copy All => Paste => HHHHHH => Paste => HHHHHHHHH
+- Allowed editors: vi, vim, emacs
+- All your files will be interpreted/compiled on Ubuntu 14.04 LTS using python3 (version 3.4.3)
+- All your files should end with a new line
+- The first line of all your files should be exactly #!/usr/bin/python3
+- A README.md file, at the root of the folder of the project, is mandatory
+- Your code should be documented
+- Your code should use the PEP 8 style (version 1.7.x)
+- All your files must be executable
 
-Number of operations: 6
+## Content Table ##
 
-carrie@ubuntu:~/0x03-minoperations$ cat 0-main.py
-#!/usr/bin/python3
-"""
-Main file for testing
-"""
+| Task | Description | File |
+| ----------- | ----------- | ----------- |
+| 0. Minimum Operations | In a text file, there is a single character H. Your text editor can execute only two operations in this file: Copy All and Paste. Given a number n, write a method that calculates the fewest number of operations needed to result in exactly n H characters in the file. | 0-minoperations.py |
 
-minOperations = __import__('0-minoperations').minOperations
+## Authors: ##
 
-n = 4
-print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
+**Solution by:** Raymundo Barrera Flores. [rbarreraf72@gmail.com](rbarreraf72@gmail.com)
+[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>](https://www.linkedin.com/in/raymundo-barrera-flores-a13022222/)
 
-n = 12
-print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
 
-carrie@ubuntu:~/0x03-minoperations$
-carrie@ubuntu:~/0x03-minoperations$ ./0-main.py
-Min number of operations to reach 4 characters: 4
-Min number of operations to reach 12 characters: 7
-carrie@ubuntu:~/0x03-minoperations$
-Repo:
-
-GitHub repository: holbertonschool-interview
-Directory: 0x03-minimum_operations
-File: 0-minoperations.py
+**Project Required by**: HolbertonSchool
