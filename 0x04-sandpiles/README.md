@@ -1,16 +1,9 @@
+# 0x04. Sandpiles #
 
-# 0x04. Sandpiles
- By: Alexandre Gautier, Software Engineer at Holberton School
- Weight: 1
- Project will start Aug 29, 2022 12:00 AM, must end by Sep 2, 2022 12:00 AM
- was released at Aug 31, 2022 12:00 AM
- An auto review will be launched at the deadline
-Resources
-Read or watch:
+<img src="https://github.com/RayBar72/holbertonschool-interview/blob/master/image.jfif" width="1000" height="450">
 
-Sandpiles - Numberphile
-Requirements
-General
+## Requirements ##
+
 - Allowed editors: vi, vim, emacs
 - All your files will be compiled on Ubuntu 14.04 LTS
 - Your programs and functions will be compiled with gcc 4.8.4 using the flags -Wall -Werror -Wextra and -pedantic
@@ -22,157 +15,17 @@ General
 - The prototypes of all your functions should be included in your header file called sandpiles.h
 - Don’t forget to push your header file
 - All your header files should be include guarded
-## Tasks
-## 0. Sandpiles sum
-mandatory
-Write a function that computes the sum of two sandpiles
 
-- Prototype: void sandpiles_sum(int grid1[3][3], int grid2[3][3]);
-- You can assume that both grid1 and grid2 are individually stable
-- A sandpile is considered stable when none of its cells contains more than 3 grains
-- When your function is done, grid1 must be stable
-- grid1 must be printed before each toppling round, only if it is unstable (See example)
-- You’re not allowed to allocate memory dynamically
-** Pay close attention to the example output - there is a specific way you must perform these calculations **
+## Content Table ##
 
-alex@~/0x04-sandpiles$ cat 0-main.c 
-`#include <stdlib.h>
-#include <stdio.h>
+| Task | Description | File |
+| ----------- | ----------- | ----------- |
+| 0. Sandpiles sum | Write a function that computes the sum of two sandpiles | 0-sandpiles.c |
 
-#include "sandpiles.h"
+## Authors: ##
 
-/**
- * print_grid_sum - Print 3x3 grids sum
- * @grid1: Left 3x3 grid
- * @grid2: Right 3x3 grid
- *
- */
-static void print_grid_sum(int grid1[3][3], int grid2[3][3])
-{
-    int i, j;
+**Solution by:** Raymundo Barrera Flores. [rbarreraf72@gmail.com](rbarreraf72@gmail.com)
+[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>](https://www.linkedin.com/in/raymundo-barrera-flores-a13022222/)
 
-    for (i = 0; i < 3; i++)
-    {
-        for (j = 0; j < 3; j++)
-        {
-            if (j)
-                printf(" ");
-            printf("%d", grid1[i][j]);
-        }
 
-        printf(" %c ", (i == 1 ? '+' : ' '));
-
-        for (j = 0; j < 3; j++)
-        {
-            if (j)
-                printf(" ");
-            printf("%d", grid2[i][j]);
-        }
-        printf("\n");
-    }
-}
-
-/**
- * print_grid - Print 3x3 grid
- * @grid: 3x3 grid
- *
- */
-static void print_grid(int grid[3][3])
-{
-    int i, j;
-
-    for (i = 0; i < 3; i++)
-    {
-        for (j = 0; j < 3; j++)
-        {
-            if (j)
-                printf(" ");
-            printf("%d", grid[i][j]);
-        }
-        printf("\n");
-    }
-}
-
-/**
- * main - Entry point
- *
- * Return: EXIT_SUCCESS or EXIT_FAILURE
- */
-int main(void)
-{
-    int grid1[3][3] = {
-        {3, 3, 3},
-        {3, 3, 3},
-        {3, 3, 3}
-    };
-    int grid2[3][3] = {
-        {1, 3, 1},
-        {3, 3, 3},
-        {1, 3, 1}
-    };
-
-    print_grid_sum(grid1, grid2);
-
-    sandpiles_sum(grid1, grid2);
-
-    printf("=\n");
-    print_grid(grid1);
-
-    return (EXIT_SUCCESS);
-}`
-alex@~/0x04-sandpiles$ gcc -Wall -Wextra -Werror -pedantic 0-main.c 0-sandpiles.c -o 0-sandpiles
-alex@~/0x04-sandpiles$ ./0-sandpiles 
-3 3 3   1 3 1
-3 3 3 + 3 3 3
-3 3 3   1 3 1
-=
-4 6 4
-6 6 6
-4 6 4
-=
-2 5 2
-5 6 5
-2 5 2
-=
-4 2 4
-2 6 2
-4 2 4
-=
-0 5 0
-5 2 5
-0 5 0
-=
-2 1 2
-1 6 1
-2 1 2
-=
-2 2 2
-2 2 2
-2 2 2
-alex@~/0x04-sandpiles$ cat 1-main.c
-Same as 0-main.c except:
-int grid1[3][3] = {
-        {0, 0, 0},
-        {0, 0, 0},
-        {0, 0, 0}
-    };
-    int grid2[3][3] = {
-        {3, 3, 3},
-        {3, 3, 3},
-        {3, 3, 3}
-    };
-alex@~/0x04-sandpiles$ gcc -Wall -Wextra -Werror -pedantic 1-main.c 0-sandpiles.c -o 0-sandpiles
-alex@~/0x04-sandpiles$ ./0-sandpiles 
-0 0 0   3 3 3
-0 0 0 + 3 3 3
-0 0 0   3 3 3
-=
-3 3 3
-3 3 3
-3 3 3
-alex@~/0x04-sandpiles$
-Repo:
-
-GitHub repository: holbertonschool-interview
-Directory: 0x04-sandpiles
-File: 0-sandpiles.c
+**Project Required by**: HolbertonSchool
