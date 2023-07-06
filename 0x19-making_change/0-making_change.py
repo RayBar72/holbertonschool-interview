@@ -22,8 +22,8 @@ def makeChange(coins, total):
 
     for coin in coins:
         while total >= coin:
-            total -= coin
-            cuenta += 1
+            total = total - coin
+            cuenta = cuenta + 1
 
     if total != 0:
         return -1
