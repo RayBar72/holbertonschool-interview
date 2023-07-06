@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 0-making_chage.py
 """
@@ -18,14 +18,14 @@ def makeChange(coins, total):
 
     coins = sorted(coins, reverse=True)
 
-    count = 0
+    cuenta = 0
 
     for coin in coins:
         while total >= coin:
             total -= coin
-            count += 1
+            cuenta += 1
 
     if total != 0:
         return -1
 
-    return count
+    return cuenta
