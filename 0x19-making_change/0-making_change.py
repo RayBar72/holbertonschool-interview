@@ -5,7 +5,7 @@ Modulus that works making chang
 """
 
 
-def makeChange_sub(coins, total, solutions):
+def makeChange(coins, total):
     """Function that calculates in recursive way
         a dynamic solution for making change problem
     Args:
