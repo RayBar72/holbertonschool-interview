@@ -15,7 +15,6 @@ def makeChange(coins, total):
         int: -1 if no solution, 0 if total equal or less
         than 0 or fewest number of coins
     """
-
     if total <= 0:
         return 0
 
