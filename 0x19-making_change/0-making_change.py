@@ -16,7 +16,7 @@ def makeChange(coins, total):
         than 0 or fewest number of coins
     """
     if total <= 0:
-        return -1
+        return 0
 
     coins = sorted(coins, reverse=True)
 
@@ -29,5 +29,5 @@ def makeChange(coins, total):
 
     if total != 0:
         return -1
-
-    return count
+    else:
+        return count
