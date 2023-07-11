@@ -1,4 +1,4 @@
-# 0x0A. 2048 (single line) #
+# 0x1A. Double Circular Linked List #
 
 <img src="https://github.com/RayBar72/holbertonschool-interview/blob/master/image.jfif" width="1000" height="450">
 
