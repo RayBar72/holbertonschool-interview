@@ -13,6 +13,12 @@ def island_perimeter(grid):
     Returns:
         int: perimeter
     """
+    if type(grid) is not list and type(grid[0]) is not list:
+        return 0
+    for row in grid:
+        for x in row:
+            if x != 0 and x != 1:
+                return 0
     retorno = []
     for i, row in enumerate(grid):
         renglon = []
