@@ -25,29 +25,29 @@ def island_perimeter(grid):
         for j, g in enumerate(row):
             numero = 0
             if g == 1:
-                numero = 4
+                numero = 0
             # Arriba
                 try:
-                    if grid[i - 1][j] == 1:
-                        numero -= 1
+                    if grid[i - 1][j] == 0:
+                        numero += 1
                 except Exception as e:
                     pass
             # Abajo
                 try:
-                    if grid[i + 1][j] == 1:
-                        numero -= 1
+                    if grid[i + 1][j] == 0:
+                        numero += 1
                 except Exception as e:
                     pass
             # Izquierda
                 try:
-                    if grid[i][j - 1] == 1:
-                        numero -= 1
+                    if grid[i][j - 1] == 0:
+                        numero += 1
                 except Exception as e:
                     pass
             # Derecha
                 try:
-                    if grid[i][j + 1] == 1:
-                        numero -= 1
+                    if grid[i][j + 1] == 0:
+                        numero += 1
                 except Exception as e:
                     pass
             renglon.append(numero)
