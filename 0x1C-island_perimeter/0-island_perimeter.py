@@ -38,5 +38,5 @@ def island_perimeter(grid):
                     if grid[i][j + 1] == 1:
                             numero -= 1
                 retorno.append(numero)
-    # return sum(retorno)
-    return retorno
+    return sum(retorno)
+    # return retorno
