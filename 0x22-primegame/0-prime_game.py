@@ -161,7 +161,7 @@ def isWinner(x, nums):
         Name of winner if could be determined, else None.
 
     """
-    if type(x) is not int or x <= 0:
+    if not nums or x <= 0:
         return None
 
     ben = 0
