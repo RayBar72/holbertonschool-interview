@@ -4,9 +4,10 @@
 """
 
 
-def list_prime(n):
+def len_prime(n):
     """
-    Function that returns a list with prime numbers up to 'n' number
+    Function that returns the length of a list with prime
+    numbers up to 'n' number
 
     Parameters
     ----------
@@ -15,8 +16,8 @@ def list_prime(n):
 
     Returns
     -------
-    retorno : list
-        List with prime numbers.
+    retorno : int
+        Lenght of list with prime numbers.
 
     """
     primos = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59,
@@ -140,7 +141,7 @@ def list_prime(n):
             retorno = primos[i:]
             break
 
-    return retorno
+    return len(retorno)
 
 
 def isWinner(x, nums):
@@ -162,21 +163,18 @@ def isWinner(x, nums):
     """
     if type(x) is not int or x <= 0:
         return None
-    if type(nums) is not list or nums == [] or any(
-            [type(x) is not int for x in nums]) or any([x < 1 for x in nums]):
-        return None
-    if x > len(nums):
-        return None
 
     ben = 0
     maria = 0
 
-    for n in nums:
-        lista = list_prime(n)
-        largo = len(lista)
-        if largo % 2 == 1:
-            maria += 1
-        else:
+    for n in range(x):
+        try:
+            largo = len_prime(nums[n])
+            if largo % 2 == 1:
+                maria += 1
+            else:
+                ben += 1
+        except Exception as e:
             ben += 1
 
     if maria > ben:
